@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/public', express.static(process.cwd() + '/public'));
 //app.use('/public', express.static(process.cwd() + '/public'));
-var port = process.envPORT || 8080;
+var port = process.env.PORT || 8080;
+//.listen(process.env.PORT || 5000)
 
 routes(app);
 api(app);
